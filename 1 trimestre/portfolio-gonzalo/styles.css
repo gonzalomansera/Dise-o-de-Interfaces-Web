@@ -1,0 +1,575 @@
+/* Variables para fácil personalización */
+:root {
+    --primary-color: #00bcd4; /* Azul cian brillante para acentos */
+    --primary-gradient: linear-gradient(135deg, #00bcd4, #00796b);
+    --secondary-color: #34495e; /* Azul oscuro para botones secundarios */
+    --background-dark: #0d0d0d; /* Fondo de la aplicación (Modo Oscuro más profundo) */
+    --background-light: #1c1c1c; /* Fondo de tarjetas/secciones alternas */
+    --text-light: #e0e0e0; /* Color de texto claro */
+    --shadow-color: rgba(0, 188, 212, 0.4); /* Sombra basada en primary-color */
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Base y Tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Habilita el scroll suave nativo */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.background-alt {
+    background-color: var(--background-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #a0a0a0;
+    margin-bottom: 60px;
+}
+
+/* --- Botones Genéricos (CTAs) --- */
+.btn-primary, .btn-secondary, .btn-large {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.btn-primary:hover {
+    background: #00796b; /* Color sólido al hacer hover */
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-light);
+    color: var(--background-dark);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+/* --- 1. Navegación Fija --- */
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-dark);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#navbar.scrolled {
+    background-color: rgba(13, 13, 13, 0.95); /* Semi-transparente al hacer scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Botón de menú solo visible en móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* --- 2. Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-dark);
+    padding-top: 80px; 
+}
+
+.greeting {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2em;
+    font-weight: 300;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+}
+
+.cta-buttons > * {
+    margin: 0 10px;
+}
+
+.social-links-hero {
+    margin-top: 50px;
+}
+
+.social-links-hero a {
+    color: var(--text-light);
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-links-hero a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 3. Sección Sobre Mí --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-card {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.focus-list {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.focus-list li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.focus-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.small-mt {
+    margin-top: 20px;
+}
+
+/* --- 4. Habilidades Técnicas (Skills) --- */
+/* Pestañas */
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #888;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button:hover {
+    color: var(--text-light);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 700;
+}
+
+.skills-panel {
+    display: none;
+}
+
+.skills-panel.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid de Herramientas */
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tool-item {
+    text-align: center;
+    padding: 15px 10px;
+    width: 110px;
+    background-color: #262626; 
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.tool-item:hover {
+    background-color: #383838;
+}
+
+.tool-item i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.tool-item:hover i {
+    transform: scale(1.1) translateY(-5px); /* Micro-interacción */
+    color: var(--primary-color);
+}
+
+.tool-item span {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* --- 5. Proyectos --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2), 0 0 5px rgba(0, 188, 212, 0.1);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-header h4 {
+    font-size: 1.3em;
+    color: var(--text-light);
+}
+
+.project-tag {
+    font-size: 0.8em;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.project-card p {
+    flex-grow: 1; 
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
+
+.project-tech-stack span {
+    display: inline-block;
+    background-color: #333;
+    color: #999;
+    font-size: 0.75em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+
+.project-links {
+    margin-top: 15px;
+}
+
+.btn-link, .btn-link-secondary {
+    text-decoration: none;
+    font-size: 0.95em;
+    margin-right: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-link {
+    color: var(--primary-color);
+}
+
+.btn-link-secondary {
+    color: #aaa;
+}
+
+.btn-link:hover, .btn-link-secondary:hover {
+    color: var(--text-light);
+}
+
+.coming-soon {
+    opacity: 0.7;
+    border: 1px solid var(--secondary-color);
+}
+.coming-text {
+    color: #999;
+    font-style: italic;
+}
+
+
+/* --- 6. Footer/Contacto --- */
+.footer-section {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid #333;
+}
+
+.contact-button-footer {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.separator {
+    margin: 0 10px;
+    color: #555;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: #555;
+}
+
+
+/* --- Media Queries (Responsiveness) --- */
+
+/* Tabletas (768px y menos) */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+    
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero h2 {
+        font-size: 1.5em;
+    }
+    
+    .subtitle {
+        margin-bottom: 40px;
+    }
+
+    /* Navegación para móvil */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--background-dark);
+        padding: 10px 0;
+        border-top: 1px solid #333;
+    }
+    
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    
+    .nav-links .btn-primary {
+        margin-top: 10px;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Grid de About Me se apila */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Botones de acción principal */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cta-buttons > * {
+        margin: 0;
+    }
+    
+    /* Pestañas de habilidades en móvil */
+    .skills-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        flex-basis: 100%; /* Ocupa todo el ancho en móvil */
+        margin-bottom: 5px;
+    }
+
+}
+
+/* Móviles Pequeños (480px y menos) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    
+    .hero h2 {
+        font-size: 1.2em;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    /* Grid de habilidades se reduce */
+    .tools-grid {
+        gap: 10px;
+    }
+    
+    .tool-item {
+        width: 80px;
+    }
+    
+    .tool-item i {
+        font-size: 2em;
+    }
+    
+    .project-card {
+        padding: 20px;
+    }
+}

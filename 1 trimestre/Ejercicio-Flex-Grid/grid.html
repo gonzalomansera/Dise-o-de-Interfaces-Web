@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio CSS Grid - Layout 1 (Basico)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: grid;
+            /* Columnas: 200px (fija), 1fr, 1fr [cite: 10] */
+            grid-template-columns: 200px 1fr 1fr; 
+            /* Filas: 100px (fija), auto (contenido), 50px (fija) [cite: 11, 12] */
+            grid-template-rows: 100px auto 50px; 
+            
+            /* Definición de áreas [cite: 15] */
+            grid-template-areas:
+                "header header header"
+                "nav main sidebar"
+                "footer footer footer";
+            
+            /* Espacio entre elementos [cite: 13] */
+            gap: 5px; 
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos base de los elementos GRID */
+        section, header, nav, main, aside, footer {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Colores y asignación a áreas [cite: 14, 3, 4, 5, 6, 7] */
+        header {
+            background-color: #4CAF50; /* Verde */
+            grid-area: header;
+        }
+
+        nav {
+            background-color: #2196F3; /* Azul */
+            grid-area: nav;
+        }
+
+        main {
+            background-color: #F44336; /* Rojo */
+            grid-area: main;
+            padding: 20px;
+        }
+
+        aside {
+            background-color: #FFC107; /* Amarillo/Naranja */
+            grid-area: sidebar;
+        }
+
+        footer {
+            background-color: #9C27B0; /* Púrpura */
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main Content</main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+
+</body>
+</html>

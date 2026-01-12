@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Formulario con Validación Visual</title>
+    <!-- Incluir Tailwind CSS para layout y estilos base -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Configuraciones de fuente y colores de Tailwind */
+        :root {
+            --color-valid: #4CAF50;    /* Verde */
+            --color-invalid: #f44336;  /* Rojo */
+            --color-focus: #2196F3;    /* Azul */
+            --color-required: #ff9800; /* Naranja */
+            --color-optional: #9e9e9e; /* Gris */
+            --bg-valid: #f1f8f4;
+            --bg-invalid: #ffebee;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+
+        /* Estilos generales para inputs y textareas */
+        input:not([type="submit"]), textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px; /* Ajuste para bordes redondeados */
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+        }
+        
+        /* Contenedor del campo para manejar márgenes */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        /* ---------------------------------------------------- */
+        /* Pseudo-clases obligatorias para el ejercicio         */
+        /* ---------------------------------------------------- */
+
+        /* 1. :focus - Cuando el campo está seleccionado (Azul) */
+        input:not([type="submit"]):focus, textarea:focus {
+            outline: none;
+            border-color: var(--color-focus);
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+            background-color: white;
+        }
+
+        /* 2. :required - Borde izquierdo naranja */
+        input:not([type="submit"]):required, textarea:required {
+            border-left: 4px solid var(--color-required);
+        }
+
+        /* 3. :optional - Borde izquierdo gris */
+        input:not([type="submit"]):optional, textarea:optional {
+            border-left: 4px solid var(--color-optional);
+        }
+
+        /* 4. :valid - Cuando el valor cumple la validación (Verde) */
+        /* Se aplica a campos requeridos que están llenos y a campos opcionales no vacíos y válidos */
+        /* Nota: Usamos :not(:placeholder-shown) para evitar que muestre válido un campo vacío antes de interactuar. */
+        input:not([type="submit"]):valid:not(:placeholder-shown), 
+        textarea:valid:not(:placeholder-shown) {
+            border-color: var(--color-valid);
+            background-color: var(--bg-valid); 
+        }
+
+        /* 5. :invalid - Cuando el valor NO cumple la validación (Rojo) */
+        /* Usamos :not(:focus) para que el campo no se muestre en rojo inmediatamente al hacer clic */
+        input:not([type="submit"]):invalid:not(:focus):not(:placeholder-shown),
+        textarea:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: var(--color-invalid);
+            background-color: var(--bg-invalid); 
+        }
+
+        /* Caso especial para campos requeridos que están vacíos (se considera inválido pero no se colorea de rojo intenso antes de enviar) */
+        input:not([type="submit"]):required:not(:placeholder-shown):invalid,
+        textarea:required:not(:placeholder-shown):invalid {
+            border-color: var(--color-invalid); /* Rojo al intentar enviar o si tiene formato incorrecto */
+            background-color: var(--bg-invalid);
+        }
+
+        /* 6. Estilos del botón con :hover */
+        button {
+            background-color: var(--color-focus);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #1976D2; /* Azul más oscuro */
+            box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+        }
+        
+        button:active {
+            transform: scale(0.99);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        /* Estilo para los campos opcionales */
+        .opcional-text {
+            font-size: 0.75rem;
+            color: var(--color-optional);
+            margin-top: 0.25rem;
+        }
+
+        /* ---------------------------------------------------- */
+        /* Respuestas a Preguntas de Reflexión (en comentarios) */
+        /* ---------------------------------------------------- */
+        
+        /* 1. ¿Por qué es importante dar feedback visual inmediato en los formularios?
+           Es crucial porque reduce la frustración del usuario al no tener que esperar a que se envíe 
+           el formulario para saber si ha cometido un error. Guía al usuario en tiempo real, 
+           mejorando la usabilidad y la tasa de finalización del formulario. El feedback 
+           visual (colores, bordes) comunica el estado de éxito o error de forma intuitiva.
+
+        2. ¿Qué ventaja tiene usar type="email" en lugar de type="text"?
+           Proporciona validación automática nativa del navegador para el formato básico de email.
+           Además, mejora la accesibilidad y la usabilidad en dispositivos móviles al mostrar 
+           automáticamente el teclado optimizado para la introducción de emails (incluyendo "@" y ".")
+
+        3. ¿Cómo mejora la accesibilidad el uso de <label> con el atributo for?
+           Asocia explícitamente la etiqueta (<label>) con su control de formulario (<input>), 
+           lo cual es fundamental para los lectores de pantalla (screen readers). Cuando un 
+           usuario se enfoca en el campo de entrada, el lector de pantalla puede leer la etiqueta 
+           asociada, y permite al usuario hacer clic en el texto de la etiqueta para enfocar el campo, 
+           haciendo que las áreas de clic sean más grandes y fáciles de usar.
+        */
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    
+    <div class="max-w-xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Formulario de Registro</h1>
+        
+        <p class="text-gray-600 mb-6">Completa el formulario. Los campos con un borde <span class="font-semibold text-orange-500">naranja</span> son obligatorios.</p>
+
+        <form action="#" method="post" id="formulario-registro" class="bg-white p-6 md:p-8 shadow-lg rounded-xl border border-gray-200">
+            
+            <!-- CAMPO: NOMBRE COMPLETO (REQUIRED) -->
+            <div class="form-group">
+                <label for="nombre">Nombre Completo <span class="text-orange-500">*</span>:</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Tu nombre y apellido" 
+                    required>
+            </div>
+            
+            <!-- CAMPO: EMAIL (REQUIRED) -->
+            <div class="form-group">
+                <label for="email">Correo Electrónico <span class="text-orange-500">*</span>:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="usuario@ejemplo.com" 
+                    required>
+            </div>
+            
+            <!-- CAMPO: TELÉFONO (REQUIRED - PATTERN) -->
+            <div class="form-group">
+                <label for="telefono">Teléfono (9 dígitos) <span class="text-orange-500">*</span>:</label>
+                <input 
+                    type="tel" 
+                    id="telefono" 
+                    name="telefono" 
+                    pattern="[0-9]{9}" 
+                    placeholder="612345678" 
+                    title="Introduce 9 dígitos numéricos" 
+                    required>
+            </div>
+            
+            <!-- CAMPO: FECHA DE NACIMIENTO (REQUIRED) -->
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento <span class="text-orange-500">*</span>:</label>
+                <input 
+                    type="date" 
+                    id="fechaNacimiento" 
+                    name="fechaNacimiento" 
+                    required>
+            </div>
+            
+            <!-- CAMPO: CONTRASEÑA (REQUIRED - MINLENGTH) -->
+            <div class="form-group">
+                <label for="password">Contraseña (Mín. 8 caracteres) <span class="text-orange-500">*</span>:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    minlength="8" 
+                    placeholder="Escribe tu contraseña"
+                    title="Mínimo 8 caracteres" 
+                    required>
+            </div>
+            
+            <!-- CAMPO: URL (OPTIONAL) -->
+            <div class="form-group">
+                <label for="urlSitio">URL de Sitio Web:</label>
+                <input 
+                    type="url" 
+                    id="urlSitio" 
+                    name="urlSitio" 
+                    placeholder="https://tusitio.com">
+                <div class="opcional-text">Campo opcional</div>
+            </div>
+            
+            <!-- CAMPO: COMENTARIOS (OPTIONAL) -->
+            <div class="form-group">
+                <label for="comentarios">Comentarios Adicionales:</label>
+                <textarea 
+                    id="comentarios" 
+                    name="comentarios" 
+                    rows="4" 
+                    placeholder="Escribe aquí cualquier comentario o nota..."></textarea>
+                <div class="opcional-text">Campo opcional</div>
+            </div>
+            
+            <!-- Botón de envío -->
+            <button type="submit" class="w-full mt-4">Enviar Formulario</button>
+            
+        </form>
+
+        <!-- Instrucciones de prueba y pseudo-clases implementadas -->
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Instrucciones de Prueba</h2>
+            <p class="mb-3 text-gray-700">La validación visual inmediata está activa:</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>El borde <span class="font-semibold text-blue-600">azul</span> con sombra indica <code>:focus</code>.</li>
+                <li>El borde <span class="font-semibold text-green-600">verde</span> con fondo claro indica <code>:valid</code>.</li>
+                <li>El borde <span class="font-semibold text-red-600">rojo</span> con fondo claro indica <code>:invalid</code> (al desenfocar).</li>
+                <li>El borde izquierdo <span class="font-semibold text-orange-500">naranja</span> indica <code>:required</code>.</li>
+                <li>El borde izquierdo <span class="font-semibold text-gray-600">gris</span> indica <code>:optional</code>.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

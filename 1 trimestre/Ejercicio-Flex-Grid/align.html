@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Align-Items</title>
+    <style>
+        /* Estilos generales simples */
+        body { 
+            font-family: sans-serif; 
+            font-size: 14px; 
+            margin: 20px; 
+        }
+        p { 
+            margin-bottom: 5px; 
+            font-weight: bold;
+        }
+        h2 { 
+            margin-bottom: 30px; 
+        }
+        
+        /* Contenedor Base (El padre) */
+        .caja-flex {
+            display: flex;
+            width: 500px; 
+            height: 100px; /* Altura GRANDE para mostrar la alineación vertical */
+            border: 1px solid #000;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+        }
+
+        /* Elemento Base (Los hijos) */
+        .hijo-flex {
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            width: 50px; 
+            height: 30px; /* Altura estándar para la mayoría de los casos */
+            flex-shrink: 0; 
+            flex-grow: 0;
+            margin: 0; 
+        }
+
+        /* Colores */
+        .hijo-flex:nth-child(1) { background-color: #FF0000; } /* Rojo */
+        .hijo-flex:nth-child(2) { background-color: #008000; } /* Verde */
+        .hijo-flex:nth-child(3) { background-color: #0000FF; } /* Azul */
+        .hijo-flex:nth-child(4) { background-color: #FFA500; } /* Naranja */
+
+
+        /* --- ESTILOS ESPECÍFICOS PARA ALIGN-ITEMS --- */
+
+        /* 1. stretch (El alto se estira para llenar el contenedor) */
+        .ai-stretch { align-items: stretch; }
+        .ai-stretch .hijo-flex { height: auto; } /* Anulamos el alto fijo */
+
+        /* 2. flex-start (Alineación superior) */
+        .ai-flex-start { align-items: flex-start; }
+
+        /* 3. flex-end (Alineación inferior) */
+        .ai-flex-end { align-items: flex-end; }
+
+        /* 4. center (Alineación al centro vertical) */
+        .ai-center { align-items: center; }
+
+        /* 5. baseline */
+        .ai-baseline {
+            align-items: baseline;
+        }
+        /* Para que se vea la diferencia, damos diferente altura inicial */
+        .ai-baseline .hijo-flex:nth-child(1) { height: 40px; }
+        .ai-baseline .hijo-flex:nth-child(2) { height: 30px; }
+        .ai-baseline .hijo-flex:nth-child(3) { height: 50px; }
+        .ai-baseline .hijo-flex:nth-child(4) { height: 30px; }
+
+        /* 6. baseline con diferentes tamaños de fuente */
+        .ai-baseline-variado {
+            align-items: baseline;
+        }
+        .ai-baseline-variado .hijo-flex:nth-child(1) {
+            font-size: 20px; 
+            width: 70px; 
+            height: 50px;
+        }
+        .ai-baseline-variado .hijo-flex:nth-child(2) {
+            font-size: 10px; 
+            width: 30px; 
+            height: 20px;
+        }
+        .ai-baseline-variado .hijo-flex:nth-child(3) {
+            font-size: 30px; 
+            width: 50px; 
+            height: 70px;
+        }
+        .ai-baseline-variado .hijo-flex:nth-child(4) {
+            font-size: 40px; 
+            width: 80px; 
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Align-Items</h2>
+
+    <p>Align-Items: stretch</p>
+    <div class="caja-flex ai-stretch">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Align-Items: flex-start</p>
+    <div class="caja-flex ai-flex-start">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Align-Items: flex-end</p>
+    <div class="caja-flex ai-flex-end">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Align-Items: center</p>
+    <div class="caja-flex ai-center">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+    
+    <p>Align-Items: baseline</p>
+    <div class="caja-flex ai-baseline">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+    
+    <p>Align-Items: baseline. Tamaños de fuente diferente</p>
+    <div class="caja-flex ai-baseline-variado">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+</body>
+</html>

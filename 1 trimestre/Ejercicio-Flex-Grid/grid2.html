@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio CSS Grid - Layout 2 (justify/align-self)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: grid;
+            /* Columnas y Filas iguales al Layout 1 */
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: 100px auto 50px; 
+            
+            /* Áreas iguales al Layout 1 */
+            grid-template-areas:
+                "header header header"
+                "nav main sidebar"
+                "footer footer footer";
+            
+            gap: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos base de los elementos GRID */
+        section, header, nav, main, aside, footer {
+            color: white;
+            font-size: 16px; 
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: auto;
+            height: auto;
+            padding: 5px;
+        }
+
+        /* Colores y asignación a áreas */
+        header { background-color: #4CAF50; grid-area: header; }
+        nav { background-color: #2196F3; grid-area: nav; }
+        main { background-color: #F44336; grid-area: main; }
+        aside { background-color: #FFC107; grid-area: sidebar; }
+        footer { background-color: #9C27B0; grid-area: footer; }
+
+        /* --- MODIFICACIONES: Usando justify-self y align-self  --- */
+        
+        /* 1. Header (Alineado al centro horizontal de todo el ancho) */
+        header {
+            justify-self: center; 
+            align-self: flex-start;
+            width: 98%; 
+        }
+
+        /* 2. Navigation (Centrado en su celda) */
+        nav {
+            justify-self: center;
+            align-self: center;
+            width: 100px; 
+            height: 50px;
+        }
+
+        /* 3. Main Content (Centrado en su celda) */
+        main {
+            justify-self: center;
+            align-self: center;
+            width: 150px; 
+            height: 150px;
+        }
+        main > span { 
+            line-height: 1.2;
+        }
+
+        /* 4. Sidebar (Justificado a la derecha, alineado al centro) */
+        aside {
+            justify-self: end;
+            align-self: center;
+            width: 80px;
+            height: 40px;
+        }
+
+        /* 5. Footer (Centrado en el eje horizontal que ocupa) */
+        footer {
+            justify-self: center;
+            align-self: center;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main><span>Content<br>contenido del main</span></main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+
+</body>
+</html>

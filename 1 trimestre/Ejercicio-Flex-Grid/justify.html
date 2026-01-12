@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Justify-Content</title>
+    <style>
+        /* Estilos generales simples */
+        body { 
+            font-family: sans-serif; 
+            font-size: 14px; 
+            margin: 20px; 
+        }
+        p { 
+            margin-bottom: 5px; 
+            font-weight: bold;
+        }
+        h2 { 
+            margin-bottom: 30px; 
+        }
+        
+        /* Contenedor Base (El padre) */
+        .caja-flex {
+            display: flex;
+            /* Anchura fija y grande para que haya espacio para justificar */
+            width: 500px; 
+            height: 60px; /* Altura para centrar verticalmente, aunque justify-content es horizontal */
+            border: 1px solid #000;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            /* Aseguramos que los ítems no se encojan y mantengan su tamaño */
+            flex-wrap: nowrap;
+        }
+
+        /* Elemento Base (Los hijos) */
+        .hijo-flex {
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            box-sizing: border-box;
+            /* Tamaño fijo para que la justificación sea visible */
+            width: 50px; 
+            /* Importante: evitar que se encojan o crezcan */
+            flex-shrink: 0; 
+            flex-grow: 0;
+            margin: 0; /* Aseguramos que no haya margen preexistente que afecte el justify-content */
+        }
+
+        /* Colores */
+        .hijo-flex:nth-child(1) { background-color: #FF0000; } /* Rojo */
+        .hijo-flex:nth-child(2) { background-color: #008000; } /* Verde */
+        .hijo-flex:nth-child(3) { background-color: #0000FF; } /* Azul */
+        .hijo-flex:nth-child(4) { background-color: #FFA500; } /* Naranja */
+
+
+        /* --- ESTILOS ESPECÍFICOS PARA JUSTIFY-CONTENT --- */
+
+        .flex-start {
+            justify-content: flex-start; /* Por defecto */
+        }
+
+        .flex-end {
+            justify-content: flex-end;
+        }
+
+        .center {
+            justify-content: center;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .space-around {
+            justify-content: space-around;
+        }
+
+        .space-evenly {
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>3.- Justify-Content</h2>
+
+    <p>Justify-Content: flex-start</p>
+    <div class="caja-flex flex-start">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Justify-Content: flex-end</p>
+    <div class="caja-flex flex-end">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Justify-Content: center</p>
+    <div class="caja-flex center">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Justify-Content: space-between</p>
+    <div class="caja-flex space-between">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Justify-Content: space-around</p>
+    <div class="caja-flex space-around">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+    <p>Justify-Content: space-evenly</p>
+    <div class="caja-flex space-evenly">
+        <div class="hijo-flex">1</div>
+        <div class="hijo-flex">2</div>
+        <div class="hijo-flex">3</div>
+        <div class="hijo-flex">4</div>
+    </div>
+
+</body>
+</html>

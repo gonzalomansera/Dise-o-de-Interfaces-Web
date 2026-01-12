@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ejemplos Flex-Wrap</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  h2 { text-align:center; }
+  .titulo { font-weight: bold; margin-top: 30px; }
+  .contenedor {
+    border: 2px solid #999;
+    padding: 10px;
+    display: flex;
+    margin-top: 10px;
+  }
+  .box {
+    width: 60px;
+    height: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .b1 { background: #ff2b2b; }
+  .b2 { background: #26ff00; }
+  .b3 { background: #0037ff; }
+  .b4 { background: #fff200; }
+</style>
+</head>
+<body>
+
+<h2>2.- WRAP</h2>
+
+<div class="titulo">Flex-Wrap: nowrap (por defecto): Contenedor grande</div>
+<div class="contenedor" style="flex-wrap: nowrap; width: 550px;">
+  <div class="box b1">1</div>
+  <div class="box b2">2</div>
+  <div class="box b3">3</div>
+  <div class="box b4">4</div>
+</div>
+
+<div class="titulo">Flex-Wrap: nowrap. Contenedor más pequeño, no entran los hijos. Se reduce el tamaño de los hijos proporcionalmente</div>
+<div class="contenedor" style="flex-wrap: nowrap; width: 280px;">
+  <div class="box b1">1</div>
+  <div class="box b2">2</div>
+  <div class="box b3">3</div>
+  <div class="box b4">4</div>
+</div>
+
+<div class="titulo">Flex-Wrap: wrap. Contenedor más pequeño, no entran los hijos. Los pasa a la fila de abajo</div>
+<div class="contenedor" style="flex-wrap: wrap; width: 240px;">
+  <div class="box b1">1</div>
+  <div class="box b2">2</div>
+  <div class="box b3">3</div>
+  <div class="box b4">4</div>
+</div>
+
+<div class="titulo">Flex-Wrap: wrap-reverse. Contenedor más pequeño, no entran los hijos. Los pasa a la fila de arriba</div>
+<div class="contenedor" style="flex-wrap: wrap-reverse; width: 240px;">
+  <div class="box b1">1</div>
+  <div class="box b2">2</div>
+  <div class="box b3">3</div>
+  <div class="box b4">4</div>
+</div>
+
+</body>
+</html>

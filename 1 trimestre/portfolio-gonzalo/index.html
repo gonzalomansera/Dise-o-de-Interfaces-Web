@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonzalo Mansera Ruiz | Full-Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <nav id="navbar">
+        <div class="nav-container">
+            <span class="logo">GMRl</span>
+            <div class="nav-links">
+                <a href="#about">Sobre Mí</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#contact" class="btn-primary">Contacto</a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+    
+    <header id="home" class="hero">
+        <div class="container" data-aos="fade-up">
+            <p class="greeting">¡Hola mundo! Soy...</p>
+            <h1>Gonzalo Mansera Ruiz</h1>
+            <h2>Futuro Full-Stack Developer 💻</h2>
+            <p class="hero-description">
+                Estudiante de DAW con enfoque en soluciones web **eficientes y escalables**. 
+                Especializándome en **JavaScript, TypeScript, PHP, React y Symfony** para construir puentes sólidos entre el frontend y el backend.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary btn-large">Ver Proyectos</a>
+                <a href="URL_TU_CV_LINK.pdf" target="_blank" class="btn-secondary btn-large">Descargar CV <i class="fas fa-download"></i></a>
+            </div>
+            <div class="social-links-hero">
+                <a href="URL_TU_LINKEDIN" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="URL_TU_GITHUB" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="URL_TU_INSTAGRAM" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h3 class="section-title" data-aos="fade-up">👤 Sobre Mí</h3>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Mi nombre es Gonzalo Mansera Ruiz, y mi pasión es transformar ideas complejas en código limpio y funcional. Actualmente, como estudiante de Desarrollo de Aplicaciones Web, estoy inmerso en un proceso de aprendizaje constante.</p>
+                    <p>Mi objetivo es claro: convertirme en un **Full-Stack Developer** con la capacidad de diseñar, construir y mantener aplicaciones completas, desde la base de datos hasta la interfaz de usuario.</p>
+                    <p>Profundizando en el stack:</p>
+                    <ul class="focus-list">
+                        <li>**Frontend:** Desarrollo de interfaces dinámicas y modernas con **React** y **TypeScript**.</li>
+                        <li>**Backend:** Arquitecturas sólidas utilizando **PHP (Symfony)**, **Java** y **Python**.</li>
+                        <li>**Datos & Dev Ops:** Manejo de **SQL**, control de versiones con **Git** y orquestación con **Docker**.</li>
+                    </ul>
+                    <a href="mailto:TU_EMAIL@EJEMPLO.COM" class="btn-primary small-mt">¡Hablemos!</a>
+                </div>
+                <div class="about-card" data-aos="fade-left">
+                    <h4>Mi Perfil Profesional</h4>
+                    <p>
+                        **Rol:** Futuro Full-Stack Developer <br>
+                        **Enfoque:** DAW Student | Aspirante a la excelencia <br>
+                        **Desafío:** Construir proyectos robustos y seguir evolucionando la pila tecnológica.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding background-alt">
+        <div class="container">
+            <h3 class="section-title" data-aos="fade-up">🛠️ Habilidades Técnicas</h3>
+            
+            <div class="skills-tabs" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-button active" data-tab="frontend">Frontend & Diseño</button>
+                <button class="tab-button" data-tab="backend">Backend & Lógica</button>
+                <button class="tab-button" data-tab="devops">DevOps & Herramientas</button>
+            </div>
+
+            <div class="skills-content">
+                
+                <div id="frontend" class="skills-panel active" data-aos="zoom-in-up">
+                    <div class="tools-grid">
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="100"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="200"><i class="fas fa-code"></i><span>TypeScript</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="300"><i class="fab fa-react"></i><span>React</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="400"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="500"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    </div>
+                </div>
+                
+                <div id="backend" class="skills-panel">
+                    <div class="tools-grid">
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="100"><i class="fab fa-php"></i><span>PHP</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="200"><i class="fas fa-database"></i><span>Symfony</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="300"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="400"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="500"><i class="fas fa-database"></i><span>SQL</span></div>
+                    </div>
+                </div>
+
+                <div id="devops" class="skills-panel">
+                    <div class="tools-grid">
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="100"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="200"><i class="fab fa-docker"></i><span>Docker</span></div>
+                        <div class="tool-item" data-aos="fade-right" data-aos-delay="300"><i class="fas fa-terminal"></i><span>Terminal</span></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h3 class="section-title" data-aos="fade-up">📂 Mis Proyectos</h3>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Una selección de trabajos que demuestran mi capacidad para integrar tecnologías Full-Stack.</p>
+
+            <div class="projects-grid">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-header">
+                        <h4>Sistema de Gestión de Clientes (CRM)</h4>
+                        <span class="project-tag">Full-Stack</span>
+                    </div>
+                    <p>Plataforma robusta para el manejo de usuarios y pedidos. Backend basado en **PHP (Symfony)** y base de datos **SQL**, con un frontend reactivo desarrollado en **React**.</p>
+                    <div class="project-tech-stack">
+                        <span>#React</span><span>#Symfony</span><span>#SQL</span><span>#TypeScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="URL_PROYECTO_1_DEMO" target="_blank" class="btn-link">
+                            <i class="fas fa-desktop"></i> Ver Demo
+                        </a>
+                        <a href="URL_PROYECTO_1_GITHUB" target="_blank" class="btn-link-secondary">
+                            <i class="fab fa-github"></i> Código Fuente
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-header">
+                        <h4>API RESTful para E-commerce</h4>
+                        <span class="project-tag">Backend</span>
+                    </div>
+                    <p>Implementación de una API de alto rendimiento utilizando **Java** y Spring Boot para gestionar inventario y autenticación, siguiendo principios de diseño REST.</p>
+                    <div class="project-tech-stack">
+                        <span>#Java</span><span>#SpringBoot</span><span>#REST</span><span>#SQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="URL_PROYECTO_2_DEMO" target="_blank" class="btn-link">
+                            <i class="fas fa-book"></i> Documentación
+                        </a>
+                        <a href="URL_PROYECTO_2_GITHUB" target="_blank" class="btn-link-secondary">
+                            <i class="fab fa-github"></i> Código Fuente
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card coming-soon" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-header">
+                        <h4>Próximo Proyecto: Data Visualizer</h4>
+                        <span class="project-tag">En Desarrollo</span>
+                    </div>
+                    <p>Aplicación de visualización de datos usando **Python** (Pandas/Matplotlib) en el backend y una interfaz moderna con **TypeScript**.</p>
+                    <div class="project-tech-stack">
+                        <span>#Python</span><span>#TypeScript</span><span>#Data</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="coming-text">¡Pronto disponible!</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer id="contact" class="footer-section">
+        <div class="container" data-aos="fade-up">
+            <h3 class="section-title">📧 Contacta Conmigo</h3>
+            <p class="subtitle">Siempre estoy abierto a nuevas oportunidades y desafíos. ¡Enviemos un mensaje!</p>
+            
+            <a href="mailto:TU_EMAIL@EJEMPLO.COM" class="btn-primary contact-button-footer">
+                <i class="fas fa-envelope"></i> Escríbeme un correo
+            </a>
+
+            <div class="footer-links">
+                <a href="URL_TU_LINKEDIN" target="_blank">LinkedIn</a>
+                <span class="separator">|</span>
+                <a href="URL_TU_GITHUB" target="_blank">GitHub</a>
+                <span class="separator">|</span>
+                <a href="TU_CV_LINK.pdf" target="_blank">CV</a>
+            </div>
+            <p class="copyright">&copy; 2025 Gonzalo Mansera Ruiz. Desarrollado con 💖 y código.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true, // Animaciones solo se ejecutan una vez
+            easing: 'ease-in-out'
+        });
+
+        // 1. Lógica de Navegación y Scroll Suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Cierra el menú en móviles
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Toggle del menú en móviles
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Añadir sombra a la nav al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Lógica de Pestañas (Skills Tabs)
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Desactivar botones y paneles
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.skills-panel').forEach(panel => panel.classList.remove('active'));
+
+                // Activar el botón clicado y su panel correspondiente
+                this.classList.add('active');
+                const targetId = this.getAttribute('data-tab');
+                const targetPanel = document.getElementById(targetId);
+                
+                // Activar el panel y refrescar AOS
+                targetPanel.classList.add('active');
+                AOS.refresh(); 
+            });
+        });
+
+        // 3. Inicializar la primera pestaña al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+             document.getElementById('frontend').classList.add('active');
+        });
+
+    </script>
+    </body>
+</html>

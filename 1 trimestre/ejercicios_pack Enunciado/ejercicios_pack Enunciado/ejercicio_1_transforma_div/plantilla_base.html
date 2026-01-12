@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Personal - Ejercicio 1 (Estilo Básico)</title>
+    <!-- Se eliminan las librerías externas para un estilo básico -->
+    <style>
+        /* ---------------------------------- */
+        /* Estilos MÁS BÁSICOS (Minimalista) */
+        /* ---------------------------------- */
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Fondo gris claro */
+            color: #333; /* Texto gris oscuro */
+        }
+
+        /* 1. Cabecera (<header>) */
+        header {
+            background-color: #555; /* Gris oscuro */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header div { /* Estilo para el logo */
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* 2. Navegación (<nav>) */
+        nav {
+            background-color: #666; /* Un poco más claro que el header */
+            padding: 5px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #888;
+        }
+
+        /* 3. Contenido Principal (<main>) y Layout */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 10px;
+            display: flex; /* Habilita el layout de dos columnas */
+            gap: 20px;
+        }
+        
+        /* 4. Contenedor de Artículos (Se mantiene el div para agrupar) */
+        .contenido { 
+            flex: 3; /* Ocupa 3/4 del espacio */
+        }
+        
+        /* 5. Artículos (<article>) */
+        article {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Borde simple */
+        }
+        article h2 {
+            color: #222;
+            margin-top: 0;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+        article p strong {
+            color: #777;
+        }
+        
+        /* 6. Barra Lateral (<aside>) */
+        aside {
+            flex: 1; /* Ocupa 1/4 del espacio */
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            height: fit-content;
+        }
+        aside h3 {
+            color: #222;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        aside ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        aside li {
+            margin-bottom: 5px;
+        }
+        aside a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        /* 7. Pie de página (<footer>) */
+        footer {
+            background-color: #555;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        /* 8. Estilo Responsivo Básico: Pila en pantallas pequeñas */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 antialiased">
+
+    <!-- Etiqueta elegida: <header> - Cabecera principal -->
+    <!-- Comentario: Representa la cabecera principal de la página, conteniendo el logo y la navegación global. -->
+    <header>
+        <div class="logo">Mi Blog Personal</div>
+        
+        <!-- Etiqueta elegida: <nav> - Menú de navegación -->
+        <!-- Comentario: Contiene un grupo de enlaces de navegación principales que permiten moverse por el sitio. -->
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#articulos">Artículos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Etiqueta elegida: <main> - Contenido principal -->
+    <!-- Comentario: Encierra el contenido principal o central del documento (los posts del blog y la barra lateral). -->
+    <main>
+        
+        <!-- Sección de Contenido Principal (Posts) -->
+        <div class="contenido">
+            
+            <!-- Etiqueta elegida: <article> - Post 1 -->
+            <!-- Comentario: Cada post es una pieza de contenido independiente y auto-suficiente (un artículo de blog). -->
+            <article>
+                <h2>Mi primer artículo sobre HTML5</h2>
+                <p><strong>Publicado:</strong> 15 de enero de 2025</p>
+                <p>
+                    HTML5 ha revolucionado la forma en que estructuramos las páginas web. 
+                    Con la introducción de elementos semánticos como header, nav, article, 
+                    section y footer, ahora podemos crear documentos web que no solo se ven 
+                    bien, sino que también tienen significado estructural.
+                </p>
+                <p>
+                    Esto es especialmente importante para la accesibilidad y el SEO. Los 
+                    lectores de pantalla y los motores de búsqueda pueden entender mejor 
+                    la estructura de nuestras páginas.
+                </p>
+            </article>
+
+            <!-- Etiqueta elegida: <article> - Post 2 -->
+            <!-- Comentario: Cada post es una pieza de contenido independiente y auto-suficiente. -->
+            <article>
+                <h2>Introducción a CSS y el modelo de caja</h2>
+                <p><strong>Publicado:</strong> 20 de enero de 2025</p>
+                <p>
+                    El modelo de caja es fundamental para entender cómo CSS calcula las 
+                    dimensiones de los elementos. Cada elemento HTML se puede visualizar 
+                    como una caja rectangular compuesta por cuatro partes: contenido, 
+                    padding, border y margin.
+                </p>
+                <p>
+                    Comprender este modelo es esencial para crear diseños precisos y 
+                    predecibles. La propiedad box-sizing nos permite controlar cómo se 
+                    calculan las dimensiones finales de nuestros elementos.
+                </p>
+            </article>
+
+            <!-- Etiqueta elegida: <article> - Post 3 -->
+            <!-- Comentario: Cada post es una pieza de contenido independiente y auto-suficiente. -->
+            <article>
+                <h2>Formularios accesibles con HTML5</h2>
+                <p><strong>Publicado:</strong> 25 de enero de 2025</p>
+                <p>
+                    HTML5 introdujo nuevos tipos de inputs que mejoran enormemente la 
+                    experiencia del usuario, especialmente en dispositivos móviles. Los 
+                    tipos como email, tel, date y number no solo proporcionan validación 
+                    nativa, sino que también activan los teclados apropiados en móviles.
+                </p>
+                <p>
+                    Además, las pseudo-clases CSS como `:valid` e `:invalid` nos permiten dar 
+                    feedback visual inmediato al usuario mientras completa un formulario.
+                </p>
+            </article>
+
+        </div>
+
+        <!-- Etiqueta elegida: <aside> - Barra lateral -->
+        <!-- Comentario: Contiene contenido secundario, como enlaces y descripciones, que es tangencial al contenido principal. -->
+        <aside>
+            
+            <!-- Etiqueta elegida: <section> - Agrupación temática -->
+            <section>
+                <h3>Sobre este blog</h3>
+                <p>
+                    Este es mi blog personal donde comparto mis aprendizajes sobre desarrollo 
+                    web, especialmente HTML5 y CSS.
+                </p>
+            </section>
+            
+            <!-- Etiqueta elegida: <section> - Agrupación temática -->
+            <section>
+                <h3>Categorías</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Accesibilidad</li>
+                </ul>
+            </section>
+
+            <!-- Etiqueta elegida: <section> - Agrupación temática -->
+            <section>
+                <h3>Artículos populares</h3>
+                <ul>
+                    <li><a href="#">Guía de Flexbox</a></li>
+                    <li><a href="#">Grid Layout explicado</a></li>
+                    <li><a href="#">Responsive Design</a></li>
+                </ul>
+            </section>
+        </aside>
+
+    </main>
+
+    <!-- Etiqueta elegida: <footer> - Pie de página -->
+    <!-- Comentario: Contiene el pie de página del sitio, con información de copyright y enlaces secundarios. -->
+    <footer>
+        <p>&copy; 2025 Mi Blog Personal. Todos los derechos reservados.</p>
+        <p>Sígueme en: 
+            <a href="#">Twitter</a> | 
+            <a href="#">GitHub</a> | 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+</body>
+</html>
