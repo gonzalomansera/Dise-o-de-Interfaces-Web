@@ -1,0 +1,58 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+
+/* NAVBAR */
+.navbar { background: #800080; color: #fff; height: 70px; }
+.navbar ul { display: flex; list-style: none; }
+.navbar a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 14px; }
+
+/* SHOWCASE */
+.showcase { background: #800080; color: #fff; padding: 40px 0 100px; position: relative; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.showcase h1 { font-size: 40px; margin-bottom: 10px; line-height: 1.2; }
+.showcase-form { margin: 20px 0; display: flex; gap: 10px; }
+.showcase-form input { padding: 10px; width: 250px; border-radius: 5px; border: none; }
+.btn { background: #9867C5; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.little-info { font-size: 13px; opacity: 0.8; }
+/* Seleccionamos la imagen dentro del showcase para aplicar la sombra */
+.showcase-img img {
+    width: 450px;
+    position: absolute;
+    bottom: -50px;
+    /* Sombra: desplazamiento X, desplazamiento Y, desenfoque, color con transparencia */
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.4));
+    /* También puedes usar box-shadow si la imagen no tiene fondo transparente */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+}
+
+/* STATS */
+.stats { margin-top: 100px; text-align: left; }
+.stat-item { flex: 1; }
+.stat-item i { color: #800080; margin-bottom: 10px; }
+.stat-item h3 { font-size: 16px; margin-bottom: 10px; }
+.stat-item p { font-size: 14px; color: #666; }
+
+/* TESTIMONIALS (CARDS) */
+.testimonials { margin: 50px auto; }
+.card { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    text-align: center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    flex: 1;
+}
+.card img { width: 60px; height: 60px; border-radius: 50%; border: 3px solid #800080; margin-bottom: 10px; }
+.card h4 { margin-bottom: 5px; }
+.card p { font-size: 13px; font-style: italic; color: #555; }
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .grid, .flex { flex-direction: column; text-align: center; }
+    .showcase-img img { position: static; width: 100%; margin-top: 20px; }
+    .showcase-form { flex-direction: column; align-items: center; }
+}
