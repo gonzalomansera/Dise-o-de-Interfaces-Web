@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-    <header>
+<body class="home-page"> <header>
         <div class="header-container">
-            <h1>El Árbol de las Letras</h1>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Menú">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="header-right">
-                <div class="search-wrap">
-                    <input type="text" placeholder="Titulo, autor...">
-                    <i class="fa fa-search"></i>
+            <div class="header-top-row">
+                <h1>El Árbol de las Letras</h1>
+                
+                <button class="menu-toggle" id="mobile-menu" aria-label="Menú">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="logo-top">
+                    <img src="img/logo.png" alt="Logo">
                 </div>
+            </div>
+
+            <div class="header-bottom-row" id="nav-interactive">
                 <nav id="nav-list">
                     <a href="#">Menú</a>
                     <a href="#">Tu librería</a>
                     <a href="compra-online.html">Compra on-line</a>
                     <a href="#">Contacto</a>
                 </nav>
-                <div class="logo-top">
-                    <img src="img/logo.png" alt="Logo">
+                <div class="search-wrap">
+                    <input type="text" placeholder="Titulo, autor...">
+                    <i class="fa fa-search"></i>
                 </div>
             </div>
         </div>
@@ -115,7 +118,7 @@
         <section class="store-footer">
             <div class="store-content">
                 <div class="map-area">
-                    <img src="img/mapa.png" alt="Mapa">
+                    <img src="img/mapa.png" alt="Mapa" class="map-img">
                 </div>
                 <div class="city-lists">
                     <ul>
@@ -153,13 +156,37 @@
             <i class="fa fa-envelope"></i>
         </div>
         <div class="author-credits">
-            <img src="img/copyright.png" alt="" style="width:15px"> Author: Gonzalo Mansera
+             Author: Gonzalo Mansera
         </div>
         <div class="privacy">
             <a href="#">Política de privacidad</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navBox = document.getElementById('nav-interactive');
+        const icon = menuBtn.querySelector('i');
+        
+        menuBtn.onclick = () => {
+            navBox.classList.toggle('active');
+            if (navBox.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        };
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('#nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navBox.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>

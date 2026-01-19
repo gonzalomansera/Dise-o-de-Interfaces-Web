@@ -12,23 +12,28 @@
 
         <header>
         <div class="header-container">
-            <h1>El Árbol de las Letras</h1>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Menú">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="header-right">
-                <div class="search-wrap">
-                    <input type="text" placeholder="Titulo, autor...">
-                    <i class="fa fa-search"></i>
+            <div class="header-top-row">
+                <h1>El Árbol de las Letras</h1>
+                
+                <button class="menu-toggle" id="mobile-menu" aria-label="Menú">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="logo-top">
+                    <img src="img/logo.png" alt="Logo">
                 </div>
+            </div>
+
+            <div class="header-bottom-row" id="nav-interactive">
                 <nav id="nav-list">
                     <a href="index.html">Menú</a>
                     <a href="#">Tu librería</a>
                     <a href="compra-online.html">Compra on-line</a>
                     <a href="#">Contacto</a>
                 </nav>
-                <div class="logo-top">
-                    <img src="img/logo.png" alt="Logo">
+                <div class="search-wrap">
+                    <input type="text" placeholder="Titulo, autor...">
+                    <i class="fa fa-search"></i>
                 </div>
             </div>
         </div>
@@ -222,6 +227,29 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navBox = document.getElementById('nav-interactive');
+        const icon = menuBtn.querySelector('i');
+        
+        menuBtn.onclick = () => {
+            navBox.classList.toggle('active');
+            if (navBox.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        };
+        
+        document.querySelectorAll('#nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navBox.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
