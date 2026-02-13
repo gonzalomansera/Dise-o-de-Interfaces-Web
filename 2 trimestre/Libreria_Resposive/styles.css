@@ -46,7 +46,8 @@ body {
 /* ==========================================================================
    HEADER Y NAVEGACIÓN
    ========================================================================== */
-header { background-color: var(--azul-header); color: white; position: relative; }
+header { background-color: var(--azul-header); color: white; position: relative;grid-template-columns: 1fr;
+ }
 
 .header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
 
@@ -141,6 +142,7 @@ h2, h3, .page-title, .detail-book-title, .order-details h3 {
 /* ==========================================================================
    FOOTER
    ========================================================================== */
+footer { grid-template-columns: 1fr;padding: 30px 20px;gap: 30px;}
 .store-footer { background-color: var(--celeste-fondo); padding: 40px 50px; border-top: 1px solid #CCC; }
 .store-content { display: flex; justify-content: space-between; max-width: 1400px; margin: 0 auto; }
 .city-lists { display: flex; gap: 50px; }
@@ -205,14 +207,18 @@ body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
 @media (max-width: 1024px) {
     .header-container, .shop-container, .store-footer { padding: 20px 30px; }
     
-    .hero-banner img { height: 300px; } /* Biblioteca más pequeña */
+    .hero-banner img { height: 300px; } 
     
     .shop-layout, .detail-layout, .header-bottom-row { 
         flex-direction: column; align-items: center; text-align: center; 
     }
 
     .products-catalog { grid-template-columns: 1fr 1fr; width: 100%; }
-    .map-area img { width: 200px; } /* Mapa se reduce un poco */
+    .map-area img { width: 200px; }
+    
+    .book-item { min-width: 120px; }
+    .book-item img { height: 170px; }
+    .horizontal-scroll { gap: 20px; padding: 30px 30px; }
 }
 
 /* ==========================================================================
@@ -228,24 +234,69 @@ body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
     }
     .header-bottom-row.active { display: flex; flex-direction: column; }
 
-    /* REDUCCIÓN DE IMÁGENES EN MÓVIL */
-    .hero-banner img { height: 200px; } /* Biblioteca mucho más pequeña */
+    
+    .hero-banner img { height: 200px; } 
     
     .map-area img { 
-        width: 160px; /* Mapa pequeño y centrado */
+        width: 160px; 
         margin: 0 auto;
     }
 
     .detail-cover, .confirmation-cover { 
-        width: 140px; /* Portadas de libros más pequeñas */
+        width: 140px; 
     }
 
     .products-catalog { grid-template-columns: 1fr; }
     
+    
+    .book-item { min-width: 100px; }
+    .book-item img { height: 140px; }
+    .book-item .book-name { font-size: 12px; }
+    .book-item .book-price { font-size: 13px; }
+    .horizontal-scroll { gap: 15px; padding: 20px 20px; }
+    
     /* Ajuste de botones y buscador */
     .search-wrap, .search-wrap input, .detalle-link, .compra-link { width: 100%; }
-    
-    .store-content { flex-direction: column; align-items: center; gap: 30px; }
-    .city-lists { flex-direction: column; gap: 15px; text-align: center; }
+    footer { 
+    width: 100%; 
 }
 
+.store-footer { 
+    background-color: var(--celeste-fondo); 
+    padding: 40px 50px; 
+    border-top: 1px solid #CCC; 
+}
+
+.store-content { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    max-width: 1400px; 
+    margin: 0 auto; 
+    gap: 30px; 
+}
+
+.city-lists { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.city-lists ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bottom-bar { 
+    background-color: var(--azul-header); 
+    color: white; 
+    padding: 15px 50px; 
+    display: flex; 
+    /* En la barra final, solemos mantener horizontal, pero si la quieres 
+       en una columna también, cambia a column: */
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+}
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 05 - Box Model y Dimensiones</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      section {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #374151;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50 p-10 min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      <section>
+        <h2>Anchura</h2>
+        <div class="text-center w-1/2 bg-amber-300 mx-auto">
+          <h1 class="text-5xl">Mitad de ancho</h1>
+        </div>
+      </section>
+
+      <section>
+        <h2>Imágenes Responsivas</h2>
+        <div class="w-1/2 bg-amber-300 mx-auto">
+          <img
+            src="[https://placehold.co/600x400/png](https://placehold.co/600x400/png)"
+            class="w-full"
+            alt="Paisaje"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Altura y 100%</h2>
+        <div
+          class="h-64 border-2 border-dashed border-gray-400 w-full relative"
+        >
+          <div class="text-center w-md h-4/5 bg-amber-300 mx-auto">
+            Contenido ocupando 80% de altura
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Padding</h2>
+        <div class="bg-blue-500 p-10">
+          <p class="bg-white">Contenido con padding de 40px alrededor</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Margin</h2>
+
+        <div class="w-1/2 mx-auto bg-amber-300 mb-10 text-center">
+          Este div está centrado con mx-auto
+        </div>
+
+        <div class="bg-gray-200 p-4">
+          <div class="h-10 bg-red-200">Elemento Superior</div>
+          <div
+            class="-mb-6 bg-green-500/50 relative z-10 w-1/2 mx-auto text-center p-2 text-white"
+          >
+            Margen bottom negativo
+          </div>
+          <div class="h-20 bg-blue-200 pt-10 text-center">
+            Elemento Inferior
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Bordes</h2>
+
+        <nav class="border-x-10 border-amber-400 p-4 mb-4 text-center">
+          Borde horizontal de 40px color ámbar
+        </nav>
+
+        <div class="border-4 border-blue-500 border-dashed p-4 text-center">
+          Borde azul discontinuo
+        </div>
+      </section>
+
+      <section>
+        <h2>Espaciado entre hijos</h2>
+        <nav class="space-y-4 bg-gray-200 p-4">
+          <a href="#" class="bg-slate-800 text-white px-8 py-4 block">Inicio</a>
+          <a href="#" class="bg-slate-800 text-white px-8 py-4 block"
+            >Acerca de</a
+          >
+          <a href="#" class="bg-slate-800 text-white px-8 py-4 block"
+            >Contacto</a
+          >
+        </nav>
+      </section>
+
+      <section>
+        <h2>Bordes entre hijos</h2>
+        <nav
+          class="flex divide-x-10 divide-lime-500 divide-dotted bg-white border"
+        >
+          <a href="#" class="px-8 py-4">Inicio</a>
+          <a href="#" class="px-8 py-4">Acerca de</a>
+          <a href="#" class="px-8 py-4">Contacto</a>
+        </nav>
+      </section>
+
+      <section>
+        <h2>Padding en elementos inline</h2>
+
+        <div class="mb-4">
+          <span class="font-bold">Incorrecto:</span>
+          <a href="#" class="px-8 py-4 bg-red-200">Enlace</a>
+        </div>
+
+        <div>
+          <span class="font-bold">Correcto:</span>
+          <a href="#" class="px-8 py-4 inline-block bg-green-200">Enlace</a>
+          <a href="#" class="px-8 py-4 block bg-green-200 mt-2">Enlace</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ejemplo Completo: Card con Tailwind</h2>
+
+        <div
+          class="w-md mx-auto my-20 border-2 border-gray-500/50 py-7 px-5 rounded-2xl space-y-8 bg-white"
+        >
+          <img
+            src="[https://placehold.co/600x400/png](https://placehold.co/600x400/png)"
+            class="w-full h-60 object-cover rounded-md"
+            alt="Paisaje Montaña"
+          />
+          <h3 class="text-3xl font-bold my-6">¡Título Card!</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fuga
+            temporibus consectetur libero impedit a provident sed
+            exercitationem, praesentium quam ea accusamus voluptatem unde? Est
+            rem quod dignissimos sint tempora.
+          </p>
+          <a
+            href="#"
+            class="block bg-blue-600 text-white text-center py-4 rounded-full hover:bg-blue-700 transition"
+            >Leer más</a
+          >
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

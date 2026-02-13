@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 07 - Responsive Design</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="p-10 bg-gray-100 space-y-12">
+    <section>
+      <h2 class="text-xl font-bold mb-4 text-slate-700">1. Sintaxis Básica</h2>
+
+      <nav class="bg-slate-800 sm:bg-red-500 text-white p-4 mb-4 rounded">
+        Fondo gris oscuro por defecto / Rojo
+      </nav>
+
+      <nav
+        class="bg-slate-800 sm:bg-red-500 md:bg-green-500 lg:bg-blue-500 text-white p-4 rounded"
+      >
+        Multicolor: Gris -> Rojo -> Verde -> Azul
+      </nav>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-4 text-slate-700">
+        2. Ejemplo Navbar Mobile-First
+      </h2>
+
+      <nav
+        class="h-auto bg-slate-800 flex flex-col gap-5 items-center justify-between py-6 px-10 md:flex-row md:h-20"
+      >
+        <img
+          src="./assets/landscape.png"
+          class="h-14 w-64 object-cover"
+          alt="Logo"
+        />
+
+        <div class="text-white flex gap-10 order-1 md:order-0">
+          <a href="#">Inicio</a>
+          <a href="#">Acerca de</a>
+          <a href="#">Contacto</a>
+        </div>
+
+        <a href="#" class="bg-amber-700 text-white px-7 py-3 rounded-lg"
+          >Contáctame</a
+        >
+      </nav>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-4 text-slate-700">
+        3. Enfoque Desktop-First
+      </h2>
+
+      <nav
+        class="flex h-20 flex-row max-md:h-auto max-md:flex-col bg-white p-4 border border-gray-300 rounded shadow gap-2"
+      >
+        <div class="p-2 border border-gray-200 bg-gray-50 flex-1 text-center">
+          Elemento 1
+        </div>
+        <div class="p-2 border border-gray-200 bg-gray-50 flex-1 text-center">
+          Elemento 2
+        </div>
+      </nav>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-4 text-slate-700">4. Rangos</h2>
+
+      <div
+        class="sm:max-lg:bg-red-400 bg-gray-200 p-6 rounded text-center font-bold"
+      >
+        Fondo rojo solo entre sm y lg
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold mb-4 text-slate-700">
+        5. Ejemplo Completo: Card Responsive
+      </h2>
+
+      <div
+        class="w-full p-4 bg-blue-500 sm:w-3/4 sm:p-6 sm:bg-green-500 md:w-1/2 md:p-8 md:bg-yellow-500 lg:w-1/3 lg:p-10 lg:bg-red-500 mx-auto rounded-xl text-white transition-all duration-300"
+      >
+        <h2 class="text-xl md:text-3xl lg:text-5xl font-bold text-center">
+          Título Responsive
+        </h2>
+      </div>
+    </section>
+  </body>
+</html>

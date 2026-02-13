@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03 - Colores y Personalización</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="p-10 space-y-8 bg-gray-50">
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">1. Uso Básico</h2>
+        <h1 class="bg-red-900 text-white p-2">Bienvenido a Tailwind</h1>
+    </section>
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">2. Opacidad</h2>
+        <h1 class="bg-black/90 text-pink-900/20 text-4xl font-bold p-2">Título con transparencias</h1>
+    </section>
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">3. Herencia</h2>
+        <div class="text-green-500 bg-black p-4">
+            <p>Este texto hereda el color verde</p>
+            <p>Este también</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">4. Arbitrary Variants</h2>
+        <div class="[&>*]:bg-blue-500 [&>*]:p-4 text-white space-y-2">
+            <p>Soy azul con padding</p>
+            <p>Yo también</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">5. Color Personalizado</h2>
+        <h1 class="bg-[#2E86AB] text-white p-2">Título con color personalizado directo</h1>
+    </section>
+
+    <section>
+        <h2 class="font-bold text-xl mb-2 text-gray-700">6. SVG con fill personalizado</h2>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="w-12 h-12 fill-[#1877f2]"
+        >
+            <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14-3 0-5 1.88-5 5.38v3H7v4h2.5v11h4.5v-11z"></path>
+        </svg>
+    </section>
+
+  </body>
+</html>
